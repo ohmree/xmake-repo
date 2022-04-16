@@ -5,6 +5,8 @@ package("qtjsonserializer")
     add_versions("4.0.3", "9cd77fc46c3b36b1155d08b4ee0fc9efaa739fe4")
 
     on_install(function (package)
+        print(import("detect.tools.find_qmake")())
+
         local configs = {}
         if package:config("shared") then
             configs.kind = "shared"
